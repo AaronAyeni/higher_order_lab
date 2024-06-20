@@ -11,4 +11,10 @@ ScranAdvisor.prototype.countRestaurants = function() {
 ScranAdvisor.prototype.findRestaurantByName = function(name) {
     return this.restaurants.find(restaurant => restaurant.name === name);
 };
+
+// Method to return an array containing each restaurant's name
+ScranAdvisor.prototype.getAllRestaurantNames = function() {
+    return this.restaurants.map(restaurant => restaurant.name);
+};
+
 module.exports = ScranAdvisor;
