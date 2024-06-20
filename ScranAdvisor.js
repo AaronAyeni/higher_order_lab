@@ -1,6 +1,6 @@
 const ScranAdvisor = function(restaurants){
     this.restaurants = restaurants;
-}
+};
 
 // Method to count the number of restaurants
 ScranAdvisor.prototype.countRestaurants = function() {
@@ -15,6 +15,11 @@ ScranAdvisor.prototype.findRestaurantByName = function(name) {
 // Method to return an array containing each restaurant's name
 ScranAdvisor.prototype.getAllRestaurantNames = function() {
     return this.restaurants.map(restaurant => restaurant.name);
+};
+
+// Method to find all restaurants from a given city
+ScranAdvisor.prototype.findRestaurantsByCity = function(city) {
+    return this.restaurants.filter(restaurant => restaurant.location.town === city);
 };
 
 module.exports = ScranAdvisor;
