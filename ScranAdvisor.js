@@ -30,4 +30,27 @@ ScranAdvisor.prototype.searchByName = function(substring) {
     );
 };
 
+// Method to find the most common cuisine type
+ScranAdvisor.prototype.getMostCommonCuisine = function() {
+    const cuisineCount = {};
+    this.restaurants.forEach(restaurant => {
+        restaurant.cuisines.forEach(cuisine => {
+            if (cuisineCount[cuisine]) {
+                cuisineCount[cuisine]++;
+            } else {
+                cuisineCount[cuisine] = 1;
+            }
+        });
+    });
+    let mostCommonCuisine = null;
+    let maxCount = 0;
+    for (const cuisine in cuisineCount) {
+        if (cuisineCount[cuisine] > maxCount) {
+            mostCommonCuisine = cuisine;
+            maxCount = cuisineCount[cuisine];
+        }
+    }
+    return mostCommonCuisine;
+}
+
 module.exports = ScranAdvisor;
