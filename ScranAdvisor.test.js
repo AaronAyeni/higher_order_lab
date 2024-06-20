@@ -120,13 +120,16 @@ describe('ScranAdvisor', () => {
           ];
           const actual = scranAdvisor.findRestaurantsByCity("Glasgow");
           expect(actual).toEqual(expected);
-    })
+    });
 
     // Extensions
 
-    test.skip('can find the most common cuisine type', () => {
+    test('can find the most common cuisine type', () => {
+      const expected = "JAPANESE";
+        const actual = scranAdvisor.getMostCommonCuisine();
+        expect(actual).toEqual(expected);
 
-    })
+    });
 
     test('can find restaurant with substring', () => {
       const expected = [
@@ -167,7 +170,7 @@ describe('ScranAdvisor', () => {
     const actual = scranAdvisor.searchByName("ru");
     expect(actual).toEqual(expected);
 
-    })
+    });
 
 
-})
+});
