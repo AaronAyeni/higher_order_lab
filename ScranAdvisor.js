@@ -22,4 +22,12 @@ ScranAdvisor.prototype.findRestaurantsByCity = function(city) {
     return this.restaurants.filter(restaurant => restaurant.location.town === city);
 };
 
+// Method to search restaurants by substring in name
+ScranAdvisor.prototype.searchByName = function(substring) {
+    const lowerCaseSubstring = substring.toLowerCase();
+    return this.restaurants.filter(restaurant => 
+        restaurant.name.toLowerCase().includes(lowerCaseSubstring)
+    );
+};
+
 module.exports = ScranAdvisor;
